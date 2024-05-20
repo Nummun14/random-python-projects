@@ -5,6 +5,7 @@ def calculate_prediction_score(amount_of_teams):
     prediction = []
     actual_result = []
     score = 0
+    correct_predictions = 0
 
     for place in range(amount_of_teams, 0, -1):  # gets teams
         predicted_team = input("What team did you predict to finish in " + str(place) + " place? ")
@@ -14,6 +15,10 @@ def calculate_prediction_score(amount_of_teams):
 
     for team in prediction:  # calculates score
         score += abs(prediction.index(team) - actual_result.index(team))
+        if prediction.index(team) == actual_result.index(team):  # checks for correct predictions
+            correct_predictions += 1
+
+    print(f"You got a score of {score} pts.\n You got {correct_predictions} correct predictions.")
     return score
 
 
