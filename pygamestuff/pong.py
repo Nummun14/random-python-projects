@@ -1,6 +1,8 @@
 import pygame
+import random
 
 pygame.init()
+pygame.display.set_caption("pong")
 screen = pygame.display.set_mode([600, 400])
 screen.fill("black")
 font = pygame.font.Font(None, 36)
@@ -18,14 +20,19 @@ ball_radius = 10
 ball_x = 300
 ball_y = 200
 player_speed = 5
-ball_y_speed = 2
-ball_x_speed = 2
+ball_y_speed = 2 * random.randint(-1, 1)
+ball_x_speed = 2 * random.randint(-1, 1)
 delay = 5
 
 pygame.draw.rect(screen, "white", [player1_x, player1_y, player_width, player_height])
 pygame.draw.rect(screen, "white", [player2_x, player2_y, player_width, player_height])
 pygame.draw.circle(screen, "white", [ball_x, ball_y], ball_radius)
 pygame.display.flip()
+
+if ball_x_speed == 0:
+    ball_x_speed += 2
+if ball_y_speed == 0:
+    ball_y_speed += 2
 
 while running:
     for event in pygame.event.get():
