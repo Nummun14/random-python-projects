@@ -53,6 +53,7 @@ while running:
             player1_x = screen.get_width() - player_width
 
     if keys[pygame.K_d]:
+        player2_x += player_speed
         if player2_x > screen.get_width() - player_width:
             player2_x = 0
     if keys[pygame.K_a]:
