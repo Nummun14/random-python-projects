@@ -22,7 +22,6 @@ ball_y = 200
 player_speed = 5
 ball_y_speed = 2 * random.randint(-1, 1)
 ball_x_speed = 2 * random.randint(-1, 1)
-delay = 5
 
 pygame.draw.rect(screen, "white", [player1_x, player1_y, player_width, player_height])
 pygame.draw.rect(screen, "white", [player2_x, player2_y, player_width, player_height])
@@ -45,30 +44,24 @@ while running:
     pygame.draw.rect(screen, "black", [player2_x, player2_y, player_width, player_height])
     pygame.draw.circle(screen, "black", [ball_x, ball_y], ball_radius)
     if keys[pygame.K_RIGHT]:
-        #pygame.time.delay(delay)
         player1_x += player_speed
         if player1_x > screen.get_width() - player_width:
             player1_x = 0
     if keys[pygame.K_LEFT]:
-        #pygame.time.delay(delay)
         player1_x -= player_speed
         if player1_x < 0:
             player1_x = screen.get_width() - player_width
 
     if keys[pygame.K_d]:
-        #pygame.time.delay(delay)
-        player2_x += player_speed
         if player2_x > screen.get_width() - player_width:
             player2_x = 0
     if keys[pygame.K_a]:
-        #pygame.time.delay(delay)
         player2_x -= player_speed
         if player2_x < 0:
             player2_x = screen.get_width() - player_width
 
     ball_y += ball_y_speed
     ball_x += ball_x_speed
-    #pygame.time.delay(50)
     if player1_x <= ball_x <= player1_x + player_width and player1_y <= ball_y + ball_radius <= player1_y + player_height:
         ball_y_speed *= -1
         ball_y = player1_y - ball_radius
