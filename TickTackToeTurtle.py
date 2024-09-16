@@ -1,0 +1,158 @@
+import time
+import turtle
+
+game = True
+
+# drawing the board
+draw = turtle.Turtle()
+# draw.hideturtle()
+draw.speed(2)
+draw.fd(150)
+draw.pu()
+draw.goto(0, -50)
+draw.pd()
+draw.fd(150)
+draw.pu()
+draw.goto(50, 50)
+draw.pd()
+draw.goto(50, -100)
+draw.pu()
+draw.goto(100, 50)
+draw.pd()
+draw.goto(100, -100)
+
+# gameplay
+print("write the initials of the place u want to place. example: tr = top right.")
+while game:
+    X = input("x go")
+    if X == 'tr' or X == 'Tr' or X == 'TR' or X == 'tR':
+        draw.pu()
+        draw.goto(110, 40)
+        draw.pd()
+        draw.goto(140, 10)
+        draw.pu()
+        draw.goto(110, 10)
+        draw.pd()
+        draw.goto(140, 40)
+    elif X == 'tm' or X == 'Tm' or X == 'TM' or X == 'tM':
+        draw.pu()
+        draw.goto(60, 40)
+        draw.pd()
+        draw.goto(90, 10)
+        draw.pu()
+        draw.goto(90, 40)
+        draw.pd()
+        draw.goto(60, 10)
+    elif X == 'tl' or X == 'Tl' or X == 'TL' or X == 'tL':
+        draw.pu()
+        draw.goto(10, 40)
+        draw.pd()
+        draw.goto(40, 10)
+        draw.pu()
+        draw.goto(40, 40)
+        draw.pd()
+        draw.goto(10, 10)
+    elif X == 'mm' or X == 'Mm' or X == 'MM' or X == 'mM':
+        draw.pu()
+        draw.goto(60, -10)
+        draw.pd()
+        draw.goto(90, -40)
+        draw.pu()
+        draw.goto(90, -10)
+        draw.pd()
+        draw.goto(60, -40)
+    elif X == 'mL' or X == 'Ml' or X == 'Ml' or X == 'ml':
+        draw.pu()
+        draw.goto(10, -10)
+        draw.pd()
+        draw.goto(40, -40)
+        draw.pu()
+        draw.goto(40, -10)
+        draw.pd()
+        draw.goto(10, -40)
+    elif X == 'mr' or X == 'Mr' or X == 'MR' or X == 'mR':
+        draw.pu()
+        draw.goto(110, -10)
+        draw.pd()
+        draw.goto(140, -40)
+        draw.pu()
+        draw.goto(140, -10)
+        draw.pd()
+        draw.goto(110, -40)
+    elif X == 'BM' or X == 'Bm' or X == 'bM' or X == 'bm':
+        draw.pu()
+        draw.goto(60, -60)
+        draw.pd()
+        draw.goto(90, -90)
+        draw.pu()
+        draw.goto(90, -60)
+        draw.pd()
+        draw.goto(60, -90)
+    elif X == 'BR' or X == 'Br' or X == 'br' or X == 'bR':
+        draw.pu()
+        draw.goto(110, -60)
+        draw.pd()
+        draw.goto(140, -90)
+        draw.pu()
+        draw.goto(140, -60)
+        draw.pd()
+        draw.goto(110, -90)
+    elif X == 'BL' or X == 'Bl' or X == 'bL' or X == 'bl':
+        draw.pu()
+        draw.goto(10, -60)
+        draw.pd()
+        draw.goto(40, -90)
+        draw.pu()
+        draw.goto(40, -60)
+        draw.pd()
+        draw.goto(10, -90)
+    else:
+        continue
+    o = input("o go!")
+    if o == 'Tr' or o == 'tr' or o == 'TR' or o == 'tR':
+        draw.pu()
+        draw.goto(125, 10)
+        draw.pd()
+        draw.circle(20)
+    elif o == 'Tm' or o == 'TM' or o == 'tm' or o == 'tM':
+        draw.pu()
+        draw.goto(75, 10)
+        draw.pd()
+        draw.circle(20)
+    elif o == 'Tl' or o == 'TL' or o == 'tl' or o == 'tL':
+        draw.pu()
+        draw.goto(25, 10)
+        draw.pd()
+        draw.circle(20)
+    elif o == 'mr' or o == 'mR' or o == 'Mr' or o == 'MR':
+        draw.pu()
+        draw.goto(125, -45)
+        draw.pd()
+        draw.circle(20)
+    elif o == 'mm' or o == 'mM' or o == 'Mm' or o == 'MM':
+        draw.pu()
+        draw.goto(75, -45)
+        draw.pd()
+        draw.circle(20)
+    elif o == 'ml' or o == 'mL' or o == 'Ml' or o == 'ML':
+        draw.pu()
+        draw.goto(25, -45)
+        draw.pd()
+        draw.circle(20)
+    elif o == 'br' or o == 'Br' or o == 'BR' or o == 'bR':
+        draw.pu()
+        draw.goto(125, -95)
+        draw.pd()
+        draw.circle(20)
+    elif o == 'bm' or o == 'Bm' or o == 'BM' or o == 'bM':
+        draw.pu()
+        draw.goto(75, -95)
+        draw.pd()
+        draw.circle(20)
+    elif o == 'bl' or o == 'Bl' or o == 'BL' or o == 'bL':
+        draw.pu()
+        draw.goto(25, -95)
+        draw.pd()
+        draw.circle(20)
+
+time.sleep(5)
